@@ -12,9 +12,9 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
 				<configuration>
-					<release>16</release>
-					<source>16</source>
-					<target>16</target>
+					<release>17</release>
+					<source>17</source>
+					<target>17</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -28,7 +28,7 @@
 <!-- 					</dependency> -->
 <!-- 				</dependencies> -->
 				<configuration>
-					<argLine>-Dforeign.restricted=permit</argLine>
+					<argLine>-Dforeign.restricted=permit --add-modules jdk.incubator.foreign --enable-native-access=nl.bentels.test</argLine>
 				</configuration>
 			</plugin>
 		</plugins>
