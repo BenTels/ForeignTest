@@ -3,8 +3,6 @@ package nl.bentels.test;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodType;
 
-import org.apache.commons.lang3.tuple.Pair;
-
 import jdk.incubator.foreign.CLinker;
 import jdk.incubator.foreign.FunctionDescriptor;
 import jdk.incubator.foreign.LibraryLookup;

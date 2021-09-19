@@ -24,7 +24,6 @@ public class StrLenCaller {
 	public long lengthOf(String str) throws Throwable {
 		try (MemorySegment cstr = CLinker.toCString(str)) {
 			long invokeExact = (long)strLen.invokeExact(cstr.address());
-			System.out.println(invokeExact);
 			return (long)invokeExact;
 		}
 	}
