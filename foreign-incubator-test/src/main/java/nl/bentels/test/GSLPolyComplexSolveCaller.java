@@ -3,7 +3,13 @@ package nl.bentels.test;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodType;
 
-import jdk.incubator.foreign.*;
+import jdk.incubator.foreign.CLinker;
+import jdk.incubator.foreign.FunctionDescriptor;
+import jdk.incubator.foreign.MemoryAccess;
+import jdk.incubator.foreign.MemoryAddress;
+import jdk.incubator.foreign.MemorySegment;
+import jdk.incubator.foreign.ResourceScope;
+import jdk.incubator.foreign.SymbolLookup;
 
 public class GSLPolyComplexSolveCaller {
 
@@ -40,7 +46,7 @@ public class GSLPolyComplexSolveCaller {
 			}
 			
 			MemoryAddress workspace = (MemoryAddress) gsl_poly_complex_workspace_alloc.invokeExact(coefficients.length);
-			int m = (int)gsl_poly_complex_solve.invokeExact(coeffs.address(), coefficients.length, workspace, resultArr.address());
+			int result = (int)gsl_poly_complex_solve.invokeExact(coeffs.address(), coefficients.length, workspace, resultArr.address());
 			gsl_poly_complex_workspace_free.invokeExact(workspace);
 			
 			for (int ptr = 0; ptr < resultLength; ptr++) {
