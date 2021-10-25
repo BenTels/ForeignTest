@@ -1,0 +1,1 @@
+extern long power3(long base);

@@ -1,0 +1,1 @@
+java -cp . -Djava.library.path=$PWD --add-modules=jdk.incubator.foreign --enable-native-access=ALL-UNNAMED -Dforeign.restricted=permit Test
